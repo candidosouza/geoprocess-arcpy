@@ -1,0 +1,9 @@
+{
+    // "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "python.defaultInterpreterPath": "C:/projects/geoprocess-arcpy/geoprocess-arcpy-env/python.exe",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+}
