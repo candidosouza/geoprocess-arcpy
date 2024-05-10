@@ -9,21 +9,21 @@ from settings.settings import Settings
 settings = Settings()
 arcpy.env.overwriteOutput = True
 
+# Declarando variáveis
+aeroports = settings.INPUT_FEATURE + r'\AEROPORTOS'
+input_buffer01 = input('Digite o valor do primeiro Buffer que deseja (metros): ')
+aeroports_buffer01 = settings.GEODB_DESTINY + r'\AEROPORTOS_BUFFER_' + input_buffer01
+print('Buffer 01 declarado...')
+
+# Geração do buffer de acordo com a distância informada pelo usuário
+arcpy.Buffer_analysis(aeroports, aeroports_buffer01, f'{input_buffer01} Meters')
 
 # Declarando variáveis
-aeroportos = settings.INPUT_FEATURE + r'\AEROPORTOS'
-dist_buffer1 = input('Digite o valor do primeiro Buffer que deseja (metros): ')
-output1 = settings.GEODB_DESTINY + r'\AEROPORTOS_BUFFER_' + dist_buffer1
-print('Variáveis declaradas...')
+input_buffer02 = input('Digite o valor do segundo Buffer que deseja (metros): ')
+aeroports_buffer02 = settings.GEODB_DESTINY + r'\AEROPORTOS_BUFFER_' + input_buffer02
+print('Buffer 02 declarado...')
 
 # Geração do buffer de acordo com a distância informada pelo usuário
-arcpy.Buffer_analysis(aeroportos, output1, f'{dist_buffer1} Meters')
+arcpy.Buffer_analysis(aeroports, aeroports_buffer02, f'{input_buffer02} Meters')
 
-dist_buffer2 = input('Digite o valor do segundo Buffer que deseja (metros): ')
-output2 = settings.GEODB_DESTINY + r'\AEROPORTOS_BUFFER_' + dist_buffer2
-print('Variáveis declaradas...')
-
-# Geração do buffer de acordo com a distância informada pelo usuário
-arcpy.Buffer_analysis(aeroportos, output2, f'{dist_buffer2} Meters')
-
-print(f'Script finalizado com sucesso. O buffer de {dist_buffer1} metros e o buffer de {dist_buffer2} metros,  foi gerado no geodatabase de saída!')
+print(f'Script finalizado com sucesso. O buffer de {input_buffer01} metros e o buffer de {input_buffer02} metros,  foi gerado no geodatabase de saída!')
