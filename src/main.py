@@ -3,7 +3,15 @@ from settings import Settings
 
 # Configuração de ambiente
 settings = Settings()
+
+# arcpy: É o módulo principal do ArcPy, que fornece acesso a várias ferramentas e funcionalidades do ArcGIS.
+# arcpy.env: env é um submódulo de arcpy que controla configurações e ambientes no ArcGIS.
+# arcpy.env.workspace: É uma propriedade do ambiente (env) que especifica o diretório ou banco de dados geoespacial no qual todas as operações subsequentes serão realizadas.
+arcpy.env.workspace = settings.GEODB_DESTINY
+
+# arcpy.env.overwriteOutput: É uma propriedade do ambiente (env) que determina se as saídas existentes serão sobregravadas/substituídos quando forem executadas operações de processamento geoespacial.
 arcpy.env.overwriteOutput = True
+
 
 
 # Declarando variáveis
