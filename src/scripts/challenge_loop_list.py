@@ -3,7 +3,7 @@ import arcpy
 print('Módulos importados...')
 
 # Configuração de ambiente
-arcpy.env.workspace = r'C:\EsriTraining\PYTS\Desafios\CountyData.gdb'
+arcpy.env.workspace = r'C:\projects\geoprocess-pro\GeoProcessArcPy\GeoProcessArcPy.gdb'
 
 # Declarar variáveis
 cam = 'ParcelPts'
